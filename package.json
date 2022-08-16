@@ -1,0 +1,27 @@
+{
+  "name": "deep-thoughts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "start": "node server/server.js",
+    "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+    "install": "cd server && npm install && cd ../client && npm install",
+    "seed": "cd server && npm run seed"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lrpineda/deep-thoughts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lrpineda/deep-thoughts/issues"
+  },
+  "homepage": "https://github.com/lrpineda/deep-thoughts#readme",
+  "devDependencies": {
+    "concurrently": "^7.3.0"
+  }
+}

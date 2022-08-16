@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 // import ApoloServer 
 const { ApolloServer } = require('apollo-server-express');
 
@@ -26,6 +27,12 @@ const startApolloServer = async (tyeDefs, resolvers) => {
   // integrate the Apollo server with our express app
   server.applyMiddleware({ app });
 
+  if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, 'client/build')));
+  }
+    app.get('*', (req, res) => {
+        res.sendFile(path.join(__dirname + '/client/build/index.html'));
+    });
   db.once('open', () => {
       app.listen(PORT, () => {
           console.log(`Server is running on port ${PORT}`);
