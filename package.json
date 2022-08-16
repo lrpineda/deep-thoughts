@@ -8,7 +8,6 @@
     "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
     "install": "cd server && npm install && cd ../client && npm install",
     "seed": "cd server && npm run seed"
-
   },
   "repository": {
     "type": "git",
@@ -23,5 +22,8 @@
   "homepage": "https://github.com/lrpineda/deep-thoughts#readme",
   "devDependencies": {
     "concurrently": "^7.3.0"
+  },
+  "dependencies": {
+    "react-router-dom": "^6.3.0"
   }
 }
